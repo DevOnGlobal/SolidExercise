@@ -1,0 +1,37 @@
+# Default files
+*.SourceManifest.xml
+*.user
+*.DotSettings
+*.vspscc
+*.svcinfo
+*.svclog
+*.rej
+*.log
+
+# Default folders
+**/bin/
+**/obj/
+
+# Default do not ignores
+!**/.gitkeep
+
+# IDE specific
+.idea/
+.vs/
+*.vssscc
+
+# Package management assets
+packages/
+**/bower_modules/
+**/node_modules/
+
+# Project specific files
+
+# Project specific folders
+*.tcVis
+*.tcLogs
+*.tcCfgExtender
+
+.gitattributes
+*.tcLS
+*.bak
