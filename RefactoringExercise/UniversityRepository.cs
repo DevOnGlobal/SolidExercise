@@ -2,7 +2,7 @@
 
 namespace RefactoringExercise
 {
-    public class UniversityRepository
+    public class UniversityRepository : IUniversityRepository
     {
         public University GetById(Guid universityId)
         {
