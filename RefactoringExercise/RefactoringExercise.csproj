@@ -44,8 +44,9 @@
   <ItemGroup>
     <Compile Include="ILogger.cs" />
     <Compile Include="IStudentFactory.cs" />
+    <Compile Include="IStudentReaderService.cs" />
     <Compile Include="IStudentRepository.cs" />
-    <Compile Include="IStudentService.cs" />
+    <Compile Include="IStudentWriterService.cs" />
     <Compile Include="IUniversityRepository.cs" />
     <Compile Include="LimitedStudent.cs" />
     <Compile Include="Logger.cs" />

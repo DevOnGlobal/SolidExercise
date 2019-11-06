@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace RefactoringExercise
 {
-    public interface IStudentService
+    public interface IStudentReaderService
     {
-        bool Add(string emailAddress, Guid universityId);
-
         IEnumerable<Student> GetStudentsByUniversity();
         IEnumerable<Student> GetStudentsByCurrentlyBorrowedEbooks();
     }
