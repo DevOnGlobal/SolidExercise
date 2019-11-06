@@ -4,6 +4,8 @@ namespace RefactoringExercise
 {
     public class Student
     {
+        private const int STANDARD_ALLOWANCE = 10;
+
         public string EmailAddress { get; private set; }
         public Guid UniversityId { get; private set; }
         public int MonthlyEbookAllowance { get; set; }
@@ -16,11 +18,11 @@ namespace RefactoringExercise
 
             if (package == Package.Standard)
             {
-                MonthlyEbookAllowance = 10;
+                MonthlyEbookAllowance = STANDARD_ALLOWANCE;
             }
             else if (package == Package.Premium)
             {
-                MonthlyEbookAllowance = 10 * 2;
+                MonthlyEbookAllowance = STANDARD_ALLOWANCE * 2;
             }
         }
     }
