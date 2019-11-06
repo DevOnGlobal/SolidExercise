@@ -53,6 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Exercises\Exercise1.md" />
+    <None Include="Exercises\Exercise2.md" />
+    <None Include="Exercises\Exercise3.md" />
+    <None Include="Exercises\Exercise4.md" />
+    <None Include="Exercises\Exercise5.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
