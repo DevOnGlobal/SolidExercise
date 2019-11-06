@@ -2,28 +2,22 @@
 
 namespace RefactoringExercise
 {
-    public class Student
+    public abstract class Student
     {
-        private const int STANDARD_ALLOWANCE = 10;
+        protected const int STANDARD_ALLOWANCE = 10;
 
         public string EmailAddress { get; private set; }
         public Guid UniversityId { get; private set; }
         public int MonthlyEbookAllowance { get; set; }
         public int CurrentlyBorrowedEbooks { get; private set; }
 
-        public Student(string emailAddress, Guid universityId, Package package)
+        protected Student(string emailAddress, Guid universityId)
         {
             this.EmailAddress = emailAddress;
             this.UniversityId = universityId;
-
-            if (package == Package.Standard)
-            {
-                MonthlyEbookAllowance = STANDARD_ALLOWANCE;
-            }
-            else if (package == Package.Premium)
-            {
-                MonthlyEbookAllowance = STANDARD_ALLOWANCE * 2;
-            }
         }
+
+        public abstract void AddBonusAllowance();
+
     }
 }
