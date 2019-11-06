@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RefactoringExercise
 {
-    public class StudentService
+    public class StudentService : IStudentService
     {
         private readonly IStudentRepository _studentRepository;
         private readonly IUniversityRepository _universityRepository;

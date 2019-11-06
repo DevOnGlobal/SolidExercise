@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IStudentRepository.cs" />
+    <Compile Include="IStudentService.cs" />
     <Compile Include="IUniversityRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
