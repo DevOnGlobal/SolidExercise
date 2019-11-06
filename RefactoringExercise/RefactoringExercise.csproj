@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ILogger.cs" />
     <Compile Include="IStudentRepository.cs" />
+    <Compile Include="IStudentService.cs" />
     <Compile Include="IUniversityRepository.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Program.cs" />
