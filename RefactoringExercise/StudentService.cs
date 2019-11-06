@@ -7,21 +7,18 @@ namespace RefactoringExercise
     {
         private readonly IStudentRepository _studentRepository;
         private readonly IUniversityRepository _universityRepository;
+        private readonly ILogger _logger;
 
-        public StudentService(IStudentRepository studentRepository, IUniversityRepository universityRepository)
+        public StudentService(IStudentRepository studentRepository, IUniversityRepository universityRepository, ILogger logger)
         {
             _studentRepository = studentRepository;
             _universityRepository = universityRepository;
+            _logger = logger;
         }
 
         public bool Add(string emailAddress, Guid universityId)
         {
-            Console.WriteLine(string.Format("Log: Start add student with email '{0}'", emailAddress));
-
-            if (string.IsNullOrWhiteSpace(emailAddress))
-            {
-                return false;
-            }
+            _logger.Log(string.Format("Log: Start add student with email '{0}'", emailAddress));
 
             if (_studentRepository.Exists(emailAddress))
             {
@@ -30,20 +27,11 @@ namespace RefactoringExercise
 
             var university = _universityRepository.GetById(universityId);
 
-            var student = new Student(emailAddress, universityId);
-
-            if (university.Package == Package.Standard)
-            {
-                student.MonthlyEbookAllowance = 10;
-            }
-            else if (university.Package == Package.Premium)
-            {
-                student.MonthlyEbookAllowance = 10 * 2;
-            }
+            var student = new Student(emailAddress, universityId, university.Package);
 
             _studentRepository.Add(student);
-            
-            Console.WriteLine(string.Format("Log: End add student with email '{0}'", emailAddress));
+
+            _logger.Log(string.Format("Log: End add student with email '{0}'", emailAddress));
 
             return true;
         }
