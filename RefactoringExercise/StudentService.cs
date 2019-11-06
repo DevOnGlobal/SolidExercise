@@ -40,10 +40,10 @@ namespace RefactoringExercise
 
         public void AddBonusAllowances()
         {
-            //...get students (IEnumerable<Student>) for bonus allowance
-            IEnumerable<Student> students = new List<Student>();
+            //...get students (IEnumerable<LimitedStudent>) for bonus allowance
+            IEnumerable<LimitedStudent> students = new List<LimitedStudent>();
             
-            foreach (Student s in students)
+            foreach (LimitedStudent s in students)
             {
                 s.AddBonusAllowance();
             }

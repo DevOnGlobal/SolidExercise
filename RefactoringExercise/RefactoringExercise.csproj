@@ -47,6 +47,7 @@
     <Compile Include="IStudentRepository.cs" />
     <Compile Include="IStudentService.cs" />
     <Compile Include="IUniversityRepository.cs" />
+    <Compile Include="LimitedStudent.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="PremiumStudent.cs" />
     <Compile Include="Program.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Student.cs" />
     <Compile Include="StudentRepository.cs" />
     <Compile Include="StudentService.cs" />
+    <Compile Include="UnlimitedStudent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

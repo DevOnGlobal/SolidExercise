@@ -16,8 +16,5 @@ namespace RefactoringExercise
             this.EmailAddress = emailAddress;
             this.UniversityId = universityId;
         }
-
-        public abstract void AddBonusAllowance();
-
     }
 }

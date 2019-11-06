@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RefactoringExercise
 {
-    class StandardStudent : Student
+    class StandardStudent : LimitedStudent
     {
         public StandardStudent(string emailAddress, Guid universityId) : base(emailAddress, universityId)
         {
