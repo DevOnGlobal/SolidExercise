@@ -8,7 +8,7 @@ namespace RefactoringExercise
 {
     public interface IStudentWriterService
     {
-        bool Add(string emailAddress, Guid universityId);
+        void Add(string emailAddress, Guid universityId);
         void AddBonusAllowances();
     }
 }

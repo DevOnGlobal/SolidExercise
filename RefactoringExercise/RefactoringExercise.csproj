@@ -55,12 +55,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Package.cs" />
     <Compile Include="StandardStudent.cs" />
+    <Compile Include="StudentReaderService.cs" />
     <Compile Include="StudentFactory.cs" />
     <Compile Include="University.cs" />
     <Compile Include="UniversityRepository.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentRepository.cs" />
-    <Compile Include="StudentService.cs" />
+    <Compile Include="StudentWriterService.cs" />
     <Compile Include="UnlimitedStudent.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace RefactoringExercise
 {
-    public class StudentService : IStudentReaderService, IStudentWriterService
+    public class StudentWriterService : IStudentWriterService
     {
         private readonly IStudentRepository _studentRepository;
         private readonly IUniversityRepository _universityRepository;
         private readonly ILogger _logger;
         private readonly IStudentFactory _studentFactory;
 
-        public StudentService(IStudentRepository studentRepository, IUniversityRepository universityRepository, ILogger logger, IStudentFactory studentFactory)
+        public StudentWriterService(IStudentRepository studentRepository, IUniversityRepository universityRepository, ILogger logger, IStudentFactory studentFactory)
         {
             _studentRepository = studentRepository;
             _universityRepository = universityRepository;
@@ -18,13 +18,13 @@ namespace RefactoringExercise
             _studentFactory = studentFactory;
         }
 
-        public bool Add(string emailAddress, Guid universityId)
+        public void Add(string emailAddress, Guid universityId)
         {
             _logger.Log(string.Format("Log: Start add student with email '{0}'", emailAddress));
 
             if (_studentRepository.Exists(emailAddress))
             {
-                return false;
+                throw new ArgumentException("A user with the same e-mail address already exists.", emailAddress);
             }
 
             var university = _universityRepository.GetById(universityId);
@@ -34,8 +34,6 @@ namespace RefactoringExercise
             _studentRepository.Add(student);
 
             _logger.Log(string.Format("Log: End add student with email '{0}'", emailAddress));
-
-            return true;
         }
 
         public void AddBonusAllowances()
@@ -48,18 +46,6 @@ namespace RefactoringExercise
                 s.AddBonusAllowance();
             }
             //...
-        }
-
-        public IEnumerable<Student> GetStudentsByUniversity()
-        {
-            //...
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Student> GetStudentsByCurrentlyBorrowedEbooks()
-        {
-            //...
-            throw new NotImplementedException();
         }
     }
 }
